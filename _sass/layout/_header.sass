@@ -1,0 +1,77 @@
+header
+  .head
+    .ueber
+      font-size: 10px
+      position: absolute
+      right: 10px
+      padding: 0 6px
+      top: 10px
+      color: $white
+      background: $darktint
+      text-transform: uppercase
+      line-height: 22px
+      border-radius: 4px 0 4px 4px
+      transition: .3s
+      &:hover
+        background: $lightertint
+
+    a svg
+      height: 98px
+      margin: 4.517rem 0 0
+      // opacity: .16
+      @include max-screen(720px)
+        height: 79px
+        margin: 4.0676rem 0 0
+
+    > svg
+      // height: 98px
+      margin: 6.517rem 0 0 0
+      opacity: .09
+      @include max-screen(720px)
+        // height: 79px
+        margin: 5.0676rem 0 0 0
+
+    // @include shakeit
+    // position: absolute
+    // background-color: $lighttint
+    // left: 0
+    // top: 0
+    width: 100%
+    // height: $head-height
+    // line-height: $head-height
+    @include max-screen(720px)
+      // height: $mobile-head-height
+      // line-height: $mobile-head-height
+    color: $darktint
+    // font-weight: bold 
+    text-align: center
+    // font-style: italic
+    @include font
+    // border-bottom: 1px solid $lightertint
+    a
+      text-decoration: none
+      color: $darktint
+    .round
+      -webkit-transform: translate3d(0,0,1px)
+      -moz-transform: translate3d(0,0,1px)
+      -ms-transform: translate3d(0,0,1px)
+      -o-transform: translate3d(0,0,1px)
+      transform: translate3d(0,0,1px)
+      border-radius: 50%
+      font-size: 1.5rem
+      margin: $head-height*.28 auto
+      line-height: $head-height*.71
+      height: $head-height*.71
+      width: $head-height*.71
+      @include max-screen(720px)
+        margin: $mobile-head-height*.71 auto
+        line-height: $mobile-head-height*.71
+        height: $mobile-head-height*.71
+        width: $mobile-head-height*.71
+      background-color: #eee
+      transition: .284s linear
+      overflow: hidden
+      &:hover
+        background-color: $darktint
+        // transform: rotate(180deg)
+        font-size: 50rem

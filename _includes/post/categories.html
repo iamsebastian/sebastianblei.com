@@ -1,0 +1,50 @@
+{% capture category %}{% if post %}{{ post.categories | category_links | size }}{% else %}{{ page.categories | category_links | size }}{% endif %}{% endcapture %}
+{% unless category == '0' %}
+<p>
+  <span class="categories">
+    {% if post %}
+      in
+        {% for category in post.categories %}
+          <span class="category-item">
+
+            <a href="{{ root_url }}{{ site.category_dir}}/{{ category }}" class="category-link">
+              {{ category }}
+            </a>
+
+            <span class="ornament">
+              {% if forloop.last %}
+                {% comment %}]{% endcomment %}
+              {% else%}
+                9
+              {% endif %}
+            </span>
+
+          </span>
+        {% endfor %}
+
+      <!-- {{ post.categories | category_links }} -->
+    {% else %}
+      in
+        {% for category in page.categories %}
+          <span class="category-item">
+
+            <a href="{{ root_url }}{{ site.category_dir}}/{{ category }}" class="category-link">
+              {{ category }}
+            </a>
+
+            <span class="ornament">
+              {% if forloop.last %}
+                {% comment %}]{% endcomment %}
+              {% else%}
+                9
+              {% endif %}
+            </span>
+
+          </span>
+        {% endfor %}
+
+      <!-- in {{ page.categories | category_links }} -->
+    {% endif %}
+  </span>
+</p>
+{% endunless %}

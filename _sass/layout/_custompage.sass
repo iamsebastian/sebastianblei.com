@@ -1,0 +1,34 @@
+// about, subpages, etc.
+.page
+  article[role=article]
+
+    // header
+    header
+      // p.meta
+      //   @include svg
+      h1
+        // color: $lightertint
+        // @include h1-page
+        @include h1-normal
+        // @include max-screen(720px)
+        //   @include h1-page-mobile
+          
+    // images
+    img
+      width: 50%
+      margin: 2.19433rem 25% 0.68919rem
+      @include max-screen(720px)
+        width: 50%
+        margin: 2.19433rem 25% 0.3731rem
+    // link, next to image
+    blockquote
+      p
+        text-align: center
+        font-size: 0.7144rem
+        font-style: italic
+        margin: 0 0 2.74782rem 0
+      
+    // content
+    p
+      @include a-clean-nocontent
+        

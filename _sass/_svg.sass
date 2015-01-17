@@ -1,0 +1,19 @@
+@mixin svg
+  svg
+    position: relative
+    &#hline_mobile
+      top: 30px
+      max-height: 15px
+      #hline > path[id*=Linie]
+        stroke: $lightertint
+    &#hline_normal
+      max-height: 25px
+      top: 40px
+      #hline > path[id*=Linie]
+        stroke: $lighttint
+  @include min-screen(721px)
+    svg#hline_mobile
+      display: none
+  @include max-screen(720px)
+    svg#hline_normal
+      display: none

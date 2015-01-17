@@ -1,0 +1,114 @@
+{% unless page.no_header %}
+  <header>
+
+    {% if index %}
+      <p class="header-ornament">X</p>
+      <p class="meta">
+      <!--
+
+        {% include custom/svg/hline.svg %}
+        {% include custom/svg/hline_m.svg %}
+      -->
+
+
+        {% if site.disqus_short_name and page.comments != false and post.comments != false and site.disqus_show_comment_count == true %}
+
+           | <a href="{% if index %}{{ root_url }}{{ post.url }}{% endif %}#disqus_thread"
+             data-disqus-identifier="{% if post.meta.disqus_id %}{{ post.meta.disqus_id }}{% else %}{{ site.url }}{{ post.url }}{% endif %}">Comments</a>
+
+        {% endif %}
+
+      </p>
+
+      <h1 class="entry-title">
+
+        <a href="{{ root_url }}{{ post.url }}">
+          {% if site.titlecase %}
+            {{ post.title | titlecase }}
+          {% else %}
+            {{ post.title }}
+          {% endif %}
+        </a>
+
+        {% if post.date %}
+          <p class="preview-date">{{ post.date | localize: "%e. %B %Y" }}</p>
+        {% endif %}
+
+      </h1>
+
+    {% else %}
+      <h1 class="entry-title">
+        {% if site.titlecase %}
+          {{ page.title | titlecase }}
+        {% else %}
+          {{ page.title }}
+        {% endif %}
+      </h1>
+    {% endif %}
+
+    {% unless page.meta == false %}
+    {% endunless %}
+  </header>
+{% endunless %}
+
+{% if index %}
+  <div class="entry-content">
+
+    {% if post.preview %}
+    <p class="article_preview">
+      {{ post.preview }}
+      <a rel="full-article" class="readon" href="{{ post.url | prepend: site.baseurl }}">
+        Weiter lesen
+      </a>
+    </p>
+    {% endif %}
+
+    {% if post.author %}
+    <p class="author">
+      <span class="ornament">
+        {% comment %}b{% endcomment %}
+      </span>{{ post.author }}
+    </p>
+    {% endif %}
+
+    {% if post.categories %}
+      <div class="categories-list">
+
+        <span class="category-pre-item">R</span>
+
+        {% for category in post.categories %}
+          <span class="category-item">
+
+            <a href="{{ root_url }}{{ site.category_dir}}/{{ category }}" class="category-link">
+              {{ category }}
+            </a>
+
+            <span class="ornament">
+              {% if forloop.last %}
+                {% comment %}]{% endcomment %}
+              {% else%}
+                9
+              {% endif %}
+            </span>
+
+          </span>
+        {% endfor %}
+
+      </div>
+    {% endif %}
+
+  </div>
+
+  {% capture excerpted %}
+    {{ content | has_excerpt }}
+  {% endcapture %}
+
+  {% if excerpted == 'true' %}
+    <footer>
+      <div class="hline"></div>
+    </footer>
+  {% endif %}
+
+{% else %}
+  <div class="entry-content">{{ content }}</div>
+{% endif %}

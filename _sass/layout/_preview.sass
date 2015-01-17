@@ -1,0 +1,80 @@
+// preview from index
+.blog-index
+  // width: 662px
+  @include max-screen(720px)
+    width: 100%
+
+  article
+    margin: 0 0 4rem
+    @include max-screen(720px)
+      padding: 0
+      margin: 0
+
+    header
+
+      p.meta
+        margin: 0
+        text-align: center
+        color: $lightertint
+        font-style: italic
+        @include svg
+        @include meta
+
+      // .ornament
+      //   line-height: 3.14rem
+      //   text-align: center
+
+      h1.entry-title
+        @include a
+        @include h1-normal
+        margin: 4.18971rem 0 1.3746rem
+        // text-align: left
+
+        a
+          @include h1-normal
+          border: none
+
+    // .entry-content
+    //   a[rel='full-article']
+    //     margin: 1.51856rem 1px
+
+    .article_preview
+      margin-top: 0
+
+    .preview-date
+      font-style: italic
+      margin: .7rem 0 1.1rem
+
+    .author
+      font-style: italic
+      
+      .ornament
+        display: block
+
+    .category-pre-item
+      @extend .ornament
+      font-size: 1.2819238rem
+      margin: 0 .4rem 0 2px
+      position: relative
+      top: 4px
+
+    .categories-list
+      margin: 0.7346rem 0 0
+      // margin: 0.7346rem 0 1.75837rem
+      // text-align: center
+
+    .category-link + .ornament
+      font-size: 1.2819238rem
+      left: 3px
+      margin: 0 2px 0
+      position: relative
+      top: 5px
+
+    footer
+      clear: both
+      div.hline
+        display: none
+        margin: $article-space 0 $article-space*.7
+        width: 100%
+        border-bottom: 1px solid $lighttint
+        // @include max-screen(720px)

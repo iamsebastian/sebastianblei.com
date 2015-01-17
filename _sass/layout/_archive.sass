@@ -1,0 +1,69 @@
+// Archiv on index
+.archive
+  padding: 50px 0 0
+  text-align: center
+  +a
+
+// blog archive
+div#blog-archives
+  h2
+    text-align: right
+    font-weight: normal
+    border-bottom: 1px dotted $lightertint
+  article
+    @include max-screen(720px)
+      margin: $margin-archive 0 0
+    min-height: 100px 
+    & *
+      line-height: 100px
+      @include max-screen(720px)
+        line-height: 1rem
+    @include font
+    h1
+      @include h1-archive
+      margin: 0
+      text-align: left
+      float: left
+      @include max-screen(720px)
+        float: none
+        line-height: 2rem
+        margin: 1rem 0
+      @include hovershake
+      a
+        border-bottom: 1px dotted $lightertint
+        color: $darktint
+        text-decoration: none 
+        &:after
+          content: " \2192"
+    time
+      @include meta
+      margin: 0 0 0 1rem
+      float: right
+      color: $lightertint
+      @include max-screen(720px)
+        margin: 0
+        width: 100%
+        text-align: center
+    time ~ span
+      +small-font
+      color: $lightertint
+      float: right
+      line-height: auto
+      @include max-screen(720px)
+        float: none
+        margin: 0 0 1rem 0
+      a
+        @include meta
+        text-decoration: none
+        border-bottom: 1px dotted $lightertint
+        color: $darktint
+    div.clear
+      border-bottom: 2px solid $lighttint
+      @include max-screen(720px)
+        margin: $margin-archive 0 0
+        border-bottom: 1px solid $lighttint
+    &:last-of-type
+      div.clear
+        border-bottom: none
+        @include max-screen(720px)
+          border-bottom: none

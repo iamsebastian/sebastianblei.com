@@ -1,0 +1,25 @@
+aside.sidebar
+  margin: 50px 0 0 0
+  border-top: 1px dashed $colour-border-miner
+  section
+    @include min-screen(720px)
+      width: 50%
+      float: left
+    h1
+      @include h1
+      margin: 1.21348rem 0
+      font-style: none
+      text-align: left
+    ul
+      li
+        font-style: italic
+        list-style: none
+        span.githubrepo
+          @include hovershake
+      li.post
+        @include hovershake
+    ul#gh_repos
+      li
+        @include hovershake
+
+    @include a-sidebar

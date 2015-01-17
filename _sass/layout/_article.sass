@@ -1,0 +1,52 @@
+// real content
+.pre-article
+  img
+    width: $layout-width
+    margin: 2rem 0
+    @include max-screen(720px)
+      width: 100%
+  article
+    padding: 0 0 48px 0
+    margin: 0 0 48px 0
+    header
+      p.meta
+        @include meta
+      h1.entry-title
+        @include h1-normal
+        margin: 3.145583rem 0 1.88721367rem
+        a
+          @include h1-normal
+          @include hover
+          color: $colour1
+
+    .entry-content
+      @include a-clean
+      code
+        // color: mix($p, $colour-mix, 50%)
+      figure.code
+        padding: .314rem 0
+        border: 1px solid $lighttint
+        overflow: auto
+        margin: 8px 8px 32px
+        @include max-screen(720px)
+          font-size: 10px
+          margin: 0.718rem 0
+        span.line-number
+          visibility: hidden
+          font-size: 14px
+          @include max-screen(720px)
+            font-size: 10px
+    footer
+      font-size: .7rem
+      clear: both
+      p.meta,
+      p
+        @include meta
+        text-align: center
+      a
+        @include meta
+      a
+        color: $colour1
+        text-transform: uppercase
+        font-style: italic
+        @include hover

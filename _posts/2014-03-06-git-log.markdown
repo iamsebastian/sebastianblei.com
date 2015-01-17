@@ -1,0 +1,153 @@
+---
+layout: post
+title: "git log Ausgaben"
+date: 2014-03-06 07:18
+comments: false
+categories: git
+---
+
+Ob für den Daily Standup, zum Auffinden eines Versionierungs-Tags oder zum Suchen einer Commit-Message, **git log** erweist sich in vielen Situationen als nützliches Tool, um dem GIT Repository Informationen zu entnehmen, ohne eine GUI starten zu müssen. Per default, wird die Log invertiert chronologisch ausgegeben -- also mit dem neuesten Eintrag zuerst.
+
+<!-- more -->
+
+```sh
+$ git log
+
+commit 3ad984ddd5eb3f341b328c30c66e565b49a1b024
+Author: Sebastian Blei <s.blei@plazz-entertainment.com>
+Date:   Thu Mar 6 09:04:35 2014 +0100
+
+    fixed IE8 build
+
+commit 7bdd789e0a0417aa2a3e9bc77dac2aba8571f719
+Author: Sebastian Blei <s.blei@plazz-entertainment.com>
+Date:   Wed Mar 5 15:34:23 2014 +0100
+
+    IE8 - set as my car - fix
+```
+
+Diese, in vielen Situationen zu informationsreiche Ansicht, lässt sich kürzen mit **--oneline**:
+
+```sh
+$ git log --oneline
+
+3ad984d fixed IE8 build
+7bdd789 IE8 - set as my car - fix
+```
+
+Dies ist eine Kombination aus **--pretty=oneline** und **--abbrev-commit**. Wie man erkennen kann, hat der *Einzeiler* auch einen verkürzten Commit Hash. Gegenteilig gibt es natürlich auch eine detailliertere Ansicht:
+
+```sh
+$ git log --pretty=fuller
+
+commit 3ad984ddd5eb3f341b328c30c66e565b49a1b024
+Author:     Sebastian Blei <s.blei@plazz-entertainment.com>
+AuthorDate: Thu Mar 6 09:04:35 2014 +0100
+Commit:     Sebastian Blei <s.blei@plazz-entertainment.com>
+CommitDate: Thu Mar 6 09:04:35 2014 +0100
+
+    fixed IE8 build
+
+commit 7bdd789e0a0417aa2a3e9bc77dac2aba8571f719
+Author:     Sebastian Blei <s.blei@plazz-entertainment.com>
+AuthorDate: Wed Mar 5 15:34:23 2014 +0100
+Commit:     Sebastian Blei <s.blei@plazz-entertainment.com>
+CommitDate: Wed Mar 5 15:34:23 2014 +0100
+
+    IE8 - set as my car - fix
+```
+
+... sowie eine RAW Ausgabe:
+
+```sh
+$ git log --pretty=raw
+
+commit 3ad984ddd5eb3f341b328c30c66e565b49a1b024
+tree 2838fefc9ceda9b0e8ea70af3a026c3477c1d31f
+parent 7bdd789e0a0417aa2a3e9bc77dac2aba8571f719
+author Sebastian Blei <s.blei@plazz-entertainment.com> 1394093075 +0100
+committer Sebastian Blei <s.blei@plazz-entertainment.com> 1394093075 +0100
+
+    fixed IE8 build
+
+commit 7bdd789e0a0417aa2a3e9bc77dac2aba8571f719
+tree d3df538d896745f3892eb294759d66555fc3a030
+parent 82ee082013fb5b1529c1669dff054ade65679f97
+author Sebastian Blei <s.blei@plazz-entertainment.com> 1394030063 +0100
+committer Sebastian Blei <s.blei@plazz-entertainment.com> 1394030063 +0100
+
+    IE8 - set as my car - fix
+```
+
+
+Eine Anzeige mit Tags:
+
+```sh
+$ git log --decorate
+
+commit 3ad984ddd5eb3f341b328c30c66e565b49a1b024 (HEAD, tag: v.1.0, origin/master, origin/dev, origin/HEAD, master, dev)
+Author: Sebastian Blei <s.blei@plazz-entertainment.com>
+Date:   Thu Mar 6 09:04:35 2014 +0100
+
+    fixed IE8 build
+
+commit 7bdd789e0a0417aa2a3e9bc77dac2aba8571f719
+Author: Sebastian Blei <s.blei@plazz-entertainment.com>
+Date:   Wed Mar 5 15:34:23 2014 +0100
+
+    IE8 - set as my car - fix
+```
+
+Möchte man einen ASCII-Art-Graphen hinzufügen, der die Ausgabe etwas strukturierter für das menschliche Hirn darstellt:
+
+```sh
+$ git log --graph
+
+* commit 3ad984ddd5eb3f341b328c30c66e565b49a1b024
+| Author: Sebastian Blei <s.blei@plazz-entertainment.com>
+| Date:   Thu Mar 6 09:04:35 2014 +0100
+| 
+|     fixed IE8 build
+|  
+* commit 7bdd789e0a0417aa2a3e9bc77dac2aba8571f719
+| Author: Sebastian Blei <s.blei@plazz-entertainment.com>
+| Date:   Wed Mar 5 15:34:23 2014 +0100
+| 
+|     IE8 - set as my car - fix
+```
+
+Den Commit Hash kürzen:
+
+```sh
+$ git log --abbrev-commit
+
+commit 3ad984d
+Author: Sebastian Blei <s.blei@plazz-entertainment.com>
+Date:   Thu Mar 6 09:04:35 2014 +0100
+
+    fixed IE8 build
+
+commit 7bdd789
+Author: Sebastian Blei <s.blei@plazz-entertainment.com>
+Date:   Wed Mar 5 15:34:23 2014 +0100
+
+    IE8 - set as my car - fix
+```
+
+Eine relative Datumsangabe:
+
+```sh
+$ git log --relative-date
+
+commit 3ad984ddd5eb3f341b328c30c66e565b49a1b024
+Author: Sebastian Blei <s.blei@plazz-entertainment.com>
+Date:   8 hours ago
+
+    fixed IE8 build
+
+commit 7bdd789e0a0417aa2a3e9bc77dac2aba8571f719
+Author: Sebastian Blei <s.blei@plazz-entertainment.com>
+Date:   26 hours ago
+
+    IE8 - set as my car - fix
+```

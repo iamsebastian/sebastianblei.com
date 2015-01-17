@@ -1,0 +1,135 @@
+$shakeintensity: 1
+$shakesize: 15
+$shakename: skewshake#{$shakeintensity}
+
+@-webkit-keyframes animation1
+  0%
+    opacity: 1
+    background-color: red
+  50% 
+    opacity: 0 
+    color: blue
+    -webkit-transform: rotate(10deg)
+    transform: rotate(10deg)
+  100%
+    opacity: 1
+@-moz-keyframes animation1
+  0%
+    opacity: 1
+    background-color: red
+  50% 
+    opacity: 0
+    color: blue
+    -webkit-transform: rotate(10deg)
+    transform: rotate(10deg)
+  100%
+    opacity: 1
+@-o-keyframes animation1
+  0%
+    opacity: 1
+    background-color: red
+  50% 
+    opacity: 0
+    color: blue
+    -webkit-transform: rotate(10deg)
+    transform: rotate(10deg)
+  100%
+    opacity: 1
+@-ms-keyframes animation1
+  0%
+    opacity: 1
+    background-color: red
+  50% 
+    opacity: 0
+    color: blue
+    -webkit-transform: rotate(10deg)
+    transform: rotate(10deg)
+  100%
+    opacity: 1
+@keyframes animation1
+  0%
+    opacity: 1
+    background-color: red
+  50% 
+    opacity: 0
+    color: blue
+    -webkit-transform: rotate(10deg)
+    transform: rotate(10deg)
+  100%
+    opacity: 1
+
+@mixin skew($intensity, $size)
+  @-webkit-keyframes skewshake#{$intensity}
+    10%
+      -webkit-transform: matrix(1, 0, $intensity/5, 1,  $size/5, 0)
+    20%
+      -webkit-transform: matrix(1, 0, -$intensity/6, 1,  -$size/6, 0)
+    30%
+      -webkit-transform: matrix(1, 0, $intensity/8, 1,  $size/8, 0)
+    45%
+      -webkit-transform: matrix(1, 0, -$intensity/11, 1,  -$size/11, 0)
+    67%
+      -webkit-transform: matrix(1, 0, $intensity/15, 1,  $size/15, 0)
+    100%
+      -webkit-transform: matrix(1, 0, 0, 1,  0, 0)
+  @-moz-keyframes skewshake#{$intensity}
+    10%
+      -moz-transform: matrix(1, 0, $intensity/5, 1,  $size/5, 0)
+    20%
+      -moz-transform: matrix(1, 0, -$intensity/6, 1,  -$size/6, 0)
+    30%
+      -moz-transform: matrix(1, 0, $intensity/8, 1,  $size/8, 0)
+    45%
+      -moz-transform: matrix(1, 0, -$intensity/11, 1,  -$size/11, 0)
+    67%
+      -moz-transform: matrix(1, 0, $intensity/15, 1,  $size/15, 0)
+    100%
+      -moz-transform: matrix(1, 0, 0, 1,  0, 0)
+  @-o-keyframes skewshake#{$intensity}
+    10%
+      -o-transform: matrix(1, 0, $intensity/5, 1,  $size/5, 0)
+    20%
+      -o-transform: matrix(1, 0, -$intensity/6, 1,  -$size/6, 0)
+    30%
+      -o-transform: matrix(1, 0, $intensity/8, 1,  $size/8, 0)
+    45%
+      -o-transform: matrix(1, 0, -$intensity/11, 1,  -$size/11, 0)
+    67%
+      -o-transform: matrix(1, 0, $intensity/15, 1,  $size/15, 0)
+    100%
+      -o-transform: matrix(1, 0, 0, 1,  0, 0)
+  @-ms-keyframes skewshake#{$intensity}
+    10%
+      -ms-transform: matrix(1, 0, $intensity/5, 1,  $size/5, 0)
+    20%
+      -ms-transform: matrix(1, 0, -$intensity/6, 1,  -$size/6, 0)
+    30%
+      -ms-transform: matrix(1, 0, $intensity/8, 1,  $size/8, 0)
+    45%
+      -ms-transform: matrix(1, 0, -$intensity/11, 1,  -$size/11, 0)
+    67%
+      -ms-transform: matrix(1, 0, $intensity/15, 1,  $size/15, 0)
+    100%
+      -ms-transform: matrix(1, 0, 0, 1,  0, 0)
+  @keyframes skewshake#{$intensity}
+    10%
+      transform: matrix(1, 0, $intensity/5, 1,  $size/5, 0)
+    20%
+      transform: matrix(1, 0, -$intensity/6, 1,  -$size/6, 0)
+    30%
+      transform: matrix(1, 0, $intensity/8, 1,  $size/8, 0)
+    45%
+      transform: matrix(1, 0, -$intensity/11, 1,  -$size/11, 0)
+    67%
+      transform: matrix(1, 0, $intensity/15, 1,  $size/15, 0)
+    100%
+      transform: matrix(1, 0, 0, 1,  0, 0)
+  
+@mixin animation($keyframeset, $duration, $repeats)
+  -webkit-animation: $keyframeset $duration linear 0s $repeats alternate 
+  -moz-animation: $keyframeset $duration linear 0s $repeats alternate 
+  -ms-animation: $keyframeset $duration linear 0s $repeats alternate 
+  -o-animation: $keyframeset $duration linear 0s $repeats alternate 
+  animation: $keyframeset $duration linear 0s $repeats alternate 
+
+@include skew($shakeintensity, $shakesize)

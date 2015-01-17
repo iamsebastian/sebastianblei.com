@@ -1,0 +1,211 @@
+$font-size: 19.0px
+
+@mixin transition
+  transition: .284s linear
+
+@mixin speedtransition
+  transition: .141s linear
+
+@mixin font
+  font-family: gandhi, Gandhi Serif, Georgia, serif
+  text-rendering: geometricPrecision
+
+@mixin mono
+  font-family: Monospace
+  font-size: 1rem
+  text-rendering: geometricPrecision
+
+@mixin small-font
+  font-size: 0.8217rem
+
+@mixin footer
+  +small-font
+  line-height: 1.9328rem
+  
+@mixin meta
+  +footer
+  // text-transform: uppercase
+  
+@mixin hover
+  @include speedtransition
+  &:hover
+    color: $c-svg5
+  
+@mixin hovershake
+  &:hover
+    @include animation($shakename, .714s, 1)
+
+@mixin a
+  a
+    border-bottom: 1px dotted $lightertint
+    color: $darktint
+    text-decoration: none
+    @include hover
+
+@mixin a-smaller
+  +a
+  a
+    font-size: 1rem
+
+
+@mixin a-clean  
+  a
+    text-decoration: none
+    border-bottom: 1px dotted $lightertint
+    color: $colour1
+    padding: 0 .2rem
+    margin: 0 .2rem
+    @include hover
+    // &:after
+    //   content: " \2192"
+
+@mixin a-sidebar
+  a
+    text-decoration: none
+    border-bottom: 1px dotted $lightertint
+    color: $colour1
+    padding: 0
+    margin: 0
+    @include hover
+    // &:after
+    //   content: " \2192"
+      
+@mixin a-clean-nocontent
+  @include a-clean
+  a
+    padding: 0
+    margin: 0
+    // &:after
+    //   content: ""
+  
+@mixin h1
+  font-size: 1.71284rem
+  text-align: center
+  font-weight: normal
+  font-style: italic
+  
+@mixin h1-normal
+  @include h1
+  font-style: normal
+  margin: 0 0 2.9375rem
+  
+@mixin h1-italic
+  @include h1
+  font-style: italic
+  margin: 0 0 2.9375rem
+  
+@mixin h1-page
+  font-size: 0.75rem
+  margin: 12px 0 3.21348rem
+  text-transform: uppercase
+  text-align: center
+  font-weight: normal
+  
+@mixin h1-page-mobile
+  margin: 9px 0 3.21348rem
+  
+@mixin h1-archive
+  font-weight: normal
+
+h1,  
+h2,
+h3,
+h4,
+h5,
+p,
+a,
+li
+  color: $darktint
+
+h2,
+h3,
+h4,
+h5,
+p,
+a,
+li
+  font-size: $font-size
+  line-height: $font-size*1.61
+  @include max-screen(720px)
+    font-size: $font-size
+    line-height: $font-size*1.51
+  & + p, & + a
+    margin-top: $font-size*1.61
+
+b,
+i,
+a,
+ul
+  padding: 0
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+p, 
+b, 
+i, 
+a, 
+span, 
+li
+  @include font
+
+// NO code blocks 
+div:not(>pre) code,
+// inline code
+p code
+  +mono
+  // background-color: $darktint
+  border: 1px solid $lighttint
+  border-radius: 4px
+  // color: $lightesttint
+  margin: 0 .04rem 0 0
+  padding: 0 .2rem .12rem
+  
+table
+  // font-size: 14px
+
+.inactive
+  color: $lightertint
+
+.floralia
+  font-family: Floralia
+  font-size: 1.43477rem
+  padding: 0 .4rem
+  position: relative
+  top: 6px
+
+.ornament
+  font-family: CharcuterieOrnaments
+  font-size: 1.773908rem
+
+.preview-date
+  color: $lightertint
+  font-size: 1.07rem
+    
+// a[rel='full-article'],
+.category-item > a
+  font-size: 1rem
+
+a[rel='full-article'], .category-item > a
+  text-decoration: none
+  border-bottom: 1px dotted $lightertint
+  @include hover
+  @include max-screen(720px)
+    line-height: auto
+
+a.light
+  border-bottom: 1px dotted $lightertint
+  text-decoration: none
+
+ul
+  padding: 1.63412345rem 0
+
+li
+  line-height: 2.4rem
+
+.header-ornament
+  @extend .ornament
+  line-height: 3.14rem
+  text-align: center
