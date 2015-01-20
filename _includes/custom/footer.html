@@ -1,5 +1,8 @@
 <p>
-	<!-- No copyright &copy; {{ site.time | date: "%Y" }} - {{ site.author }} - -->
+	{% comment %}
+	No copyright &copy; {{ site.time | date: "%Y" }} - {{ site.author }} - 
+	{% endcomment %}
+	
 	{% if page.author || site.author %}
 		{{ page.author || site.author }}
 	{% endif %}
