@@ -4,12 +4,10 @@
     {% if index %}
       <p class="header-ornament">X</p>
       <p class="meta">
-      <!--
-
-        {% include custom/svg/hline.svg %}
-        {% include custom/svg/hline_m.svg %}
-      -->
-
+        {% comment %}
+          {% include custom/svg/hline.svg %}
+          {% include custom/svg/hline_m.svg %}
+        {% endcomment %}        
 
         {% if site.disqus_short_name and page.comments != false and post.comments != false and site.disqus_show_comment_count == true %}
 
