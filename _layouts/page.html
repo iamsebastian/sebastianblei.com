@@ -6,10 +6,12 @@ layout: default
 <article role="article">
   {% if page.title %}
   <header>
-<!--     <p class="meta">
+
+    {% comment %}<p class="meta">
       {% include custom/svg/hline.svg %}
       {% include custom/svg/hline_m.svg %}
-    </p> -->
+    </p>{% endcomment %}
+
     <p class="header-ornament">X</p>
     <h1 class="entry-title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
   </header>
