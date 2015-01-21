@@ -22,7 +22,7 @@
           </span>
         {% endfor %}
 
-      <!-- {{ post.categories | category_links }} -->
+      {% comment %}{{ post.categories | category_links }}{% endcomment %}
     {% else %}
       in
         {% for category in page.categories %}
@@ -43,7 +43,7 @@
           </span>
         {% endfor %}
 
-      <!-- in {{ page.categories | category_links }} -->
+      {% comment %}{{ page.categories | category_links }}{% endcomment %}
     {% endif %}
   </span>
 </p>
