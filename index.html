@@ -13,9 +13,9 @@ layout: default
 
   <div class="pagination">
     {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}" class="light previous">Vorherige</a>
+      <a href="{{ paginator.previous_page_path }}" class="light previous">Die vorherigen Beiträge</a>
     {% else %}
-      <span class="inactive">Vorherige</span>
+      <span class="inactive">Keine vorherigen Beiträge</span>
     {% endif %}
 
     <span class="floralia">T</span>
@@ -23,9 +23,9 @@ layout: default
       <span class="floralia">U</span>
     
     {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}" class="light next">Nächste</a>
+      <a href="{{ paginator.next_page_path }}" class="light next">Die nächsten Beiträge</a>
     {% else %}
-      <span class="inactive">Nächste</span>
+      <span class="inactive">Keine nächsten Beiträge</span>
     {% endif %}
   </div>
 
