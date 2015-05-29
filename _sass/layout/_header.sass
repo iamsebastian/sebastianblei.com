@@ -1,5 +1,24 @@
 header
   .head
+    padding: 0 0 3.1427634rem
+    // @include shakeit
+    // position: absolute
+    // background-color: $lighttint
+    // left: 0
+    // top: 0
+    // width: 100%
+    // height: $head-height
+    // line-height: $head-height
+    @include max-screen(720px)
+      // height: $mobile-head-height
+      // line-height: $mobile-head-height
+    // color: $darktint
+    // font-weight: bold
+    text-align: center
+    // font-style: italic
+    @include font
+    // border-bottom: 1px solid $lightertint
+
     .ueber
       font-size: 10px
       position: absolute
@@ -31,23 +50,6 @@ header
         // height: 79px
         margin: 5.0676rem 0 0 0
 
-    // @include shakeit
-    // position: absolute
-    // background-color: $lighttint
-    // left: 0
-    // top: 0
-    width: 100%
-    // height: $head-height
-    // line-height: $head-height
-    @include max-screen(720px)
-      // height: $mobile-head-height
-      // line-height: $mobile-head-height
-    color: $darktint
-    // font-weight: bold 
-    text-align: center
-    // font-style: italic
-    @include font
-    // border-bottom: 1px solid $lightertint
     a
       text-decoration: none
       color: $darktint

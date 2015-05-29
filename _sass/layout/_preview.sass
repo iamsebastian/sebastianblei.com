@@ -8,7 +8,7 @@
     margin: 0 0 4rem
     @include max-screen(720px)
       padding: 0
-      margin: 0
+      margin: 0 0 4rem
 
     header
 
@@ -47,28 +47,28 @@
 
     .author
       font-style: italic
-      
+
       .ornament
         display: block
 
-    .category-pre-item
-      @extend .ornament
-      font-size: 1.2819238rem
-      margin: 0 .4rem 0 2px
-      position: relative
-      top: 4px
+    // line ornament on first tag element
+    .category-pre-item svg
+      width: 37px
+      height: 10px
+      padding: 0 .3rem 0 0
+
 
     .categories-list
       margin: 0.7346rem 0 0
       // margin: 0.7346rem 0 1.75837rem
       // text-align: center
 
-    .category-link + .ornament
-      font-size: 1.2819238rem
-      left: 3px
-      margin: 0 2px 0
-      position: relative
-      top: 5px
+    // triangle ornament since 2nd tag element
+    .category-link + .ornament svg
+      width: 8px
+      height: 10px
+      padding: 0 .2rem 0 .5rem
+
 
     footer
       clear: both
