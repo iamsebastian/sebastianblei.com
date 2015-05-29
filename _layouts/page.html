@@ -7,12 +7,19 @@ layout: default
   {% if page.title %}
   <header>
 
-    {% comment %}<p class="meta">
-      {% include custom/svg/hline.svg %}
-      {% include custom/svg/hline_m.svg %}
-    </p>{% endcomment %}
+    {% comment %}
+        <p class="meta">
+        {% include custom/svg/hline.svg %}
+        {% include custom/svg/hline_m.svg %}
+        </p>
+    {% endcomment %}
 
-    <p class="header-ornament">X</p>
+    {% comment %}
+        <p class="header-ornament">
+        {% include custom/svg/ornamente_grosser_schwung_plain.svg %}
+        </p>
+    {% endcomment %}
+
     <h1 class="entry-title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
   </header>
   {% endif %}
