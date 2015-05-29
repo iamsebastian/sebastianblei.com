@@ -1,4 +1,4 @@
-$font-size: 19.0px
+$font-size: 1.20rem
 
 @mixin transition
   transition: .284s linear
@@ -7,13 +7,13 @@ $font-size: 19.0px
   transition: .141s linear
 
 @mixin font
-  font-family: gandhi, Gandhi Serif, Georgia, serif
-  text-rendering: geometricPrecision
+  font-family: gandhi_serif, Georgia, serif
+  text-rendering: optimizelegibility
 
 @mixin mono
   font-family: Monospace
   font-size: 1rem
-  text-rendering: geometricPrecision
+  text-rendering: optimizelegibility
 
 @mixin small-font
   font-size: 0.8217rem
@@ -177,18 +177,18 @@ table
   top: 6px
 
 .ornament
-  font-family: CharcuterieOrnaments
-  font-size: 1.773908rem
 
 .preview-date
   color: $lightertint
   font-size: 1.07rem
-    
+
 // a[rel='full-article'],
 .category-item > a
   font-size: 1rem
 
-a[rel='full-article'], .category-item > a
+// tags after full articles
+// links to next/prev articles in meta after full articles
+a[rel='full-article'], .category-item > a, article[role='article'] .meta a
   text-decoration: none
   border-bottom: 1px dotted $lightertint
   @include hover
@@ -200,15 +200,16 @@ a.light
   text-decoration: none
 
 ul
-  padding: 1.63412345rem 0
+  padding: 1.63412345rem 0 1.63412345rem 1rem
 
 li
   line-height: 2.4rem
 
 .header-ornament
   @extend .ornament
-  line-height: 3.14rem
   text-align: center
+  svg
+    width: 100px
 
 h1.entry-title
   @include h1-normal
