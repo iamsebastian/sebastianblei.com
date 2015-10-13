@@ -6,9 +6,10 @@
 
 html
   position: relative
-  background-color: $colour-bg 
+  background-color: $colour-bg
 
 body
+  margin: 1rem 0 0
   // width: 720px
   @include max-screen(720px)
     // width: 90%
@@ -19,11 +20,15 @@ body
     a
       font-size: 1rem
       color: $lightertint
-    margin: 50px auto 0
-    width: $layout-width
+    @include centered-content-main
     text-align: center
-    @include max-screen(720px)
-      width: 90%
-  
-  .clear
-    clear: both
+    //margin: 50px auto 0
+    //width: $layout-width
+    //@include max-screen(720px)
+      //width: 90%
+
+.clear
+  clear: both
+
+.clear-right
+  clear: right

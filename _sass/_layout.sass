@@ -8,6 +8,23 @@ $article-space: 6rem
 
 $layout-width: 642px
 
+@mixin centered-content
+  position: relative
+  margin: auto
+  left: 0
+  right: 0
+  width: $layout-width
+  @include max-screen(720px)
+    width: 90%
+
+@mixin centered-content-main
+  @include centered-content
+  @include min-screen(721px)
+    margin: auto auto auto 260px
+    @include max-screen(960px)
+      max-width: calc(100% - 290px)
+    @include max-screen(1160px)
+
 html
   overflow-x: hidden
 

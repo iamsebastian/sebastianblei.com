@@ -7,23 +7,29 @@
 // blog archive
 div#blog-archives
   h2
-    text-align: right
     font-weight: normal
     border-bottom: 1px dotted $lightertint
+
+    // Set top-margin on following categories.
+    & ~ h2
+      margin-top: 1rem
+
   article
     @include max-screen(720px)
       margin: $margin-archive 0 0
-    min-height: 100px 
+    //min-height: 100px
+
     & *
-      line-height: 100px
+      //line-height: 100px
       @include max-screen(720px)
         line-height: 1rem
     @include font
+
     h1
       @include h1-archive
       margin: 0
       text-align: left
-      float: left
+      //float: left
       @include max-screen(720px)
         float: none
         line-height: 2rem
@@ -32,36 +38,40 @@ div#blog-archives
       a
         border-bottom: 1px dotted $lightertint
         color: $darktint
-        text-decoration: none 
+        text-decoration: none
         &:after
           content: " \2192"
+
     time
       @include meta
-      margin: 0 0 0 1rem
-      float: right
+      //margin: 0 0 0 1rem
+      //float: right
       color: $lightertint
       @include max-screen(720px)
         margin: 0
         width: 100%
-        text-align: center
+        text-align: left
+
     time ~ span
       +small-font
       color: $lightertint
-      float: right
+      //float: right
       line-height: auto
       @include max-screen(720px)
         float: none
-        margin: 0 0 1rem 0
+        //margin: 0 0 1rem 0
       a
         @include meta
         text-decoration: none
         border-bottom: 1px dotted $lightertint
         color: $darktint
+
     div.clear
-      border-bottom: 2px solid $lighttint
+      border-bottom: 1px solid $lighttint
       @include max-screen(720px)
         margin: $margin-archive 0 0
         border-bottom: 1px solid $lighttint
+
     &:last-of-type
       div.clear
         border-bottom: none

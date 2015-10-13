@@ -1,0 +1,36 @@
+nav[role=navigation]
+  @include centered-content
+  float: left
+  margin: 0 0 2rem 1.3rem
+  //max-width: 200px
+  @include min-screen(721px)
+    max-width: 200px
+  @include max-screen(720px)
+    margin: 0 auto 2rem
+    float: none
+
+  svg
+    display: block
+    margin: auto
+    max-height: 100px
+
+  h3.headline
+    @include sans
+    border-bottom: 1px solid $lighttint
+    font-size: 1.2rem
+    font-weight: 300
+    line-height: 2.4
+    margin-bottom: 1rem
+    text-align: center
+
+  ul
+    list-style: none
+    padding: 0 0 0 0.5rem
+
+    li
+      line-height: 1.5
+      @include a-sidebar
+      a
+        @include sans
+        font-size: 0.9rem
+        line-height: 1.3

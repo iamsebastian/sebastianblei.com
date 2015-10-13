@@ -6,8 +6,8 @@
     @include max-screen(720px)
       width: 100%
   article
-    padding: 0 0 48px 0
-    margin: 0 0 48px 0
+    //padding: 0 0 48px
+    margin: 0 0 48px
     header
       p.meta
         @include meta
@@ -30,17 +30,24 @@
           @include max-screen(720px)
             font-size: 10px
     footer
+      border-top: 1px solid $lighttint
+      // This will insert space in small articles between
+      // navigation and footer. So I removed'em.
+      //clear: both
       font-size: .7rem
-      clear: both
+      margin: 2rem 0 0
+      padding: 1rem 0 0
+
       p.meta,
       p
         @include meta
-        text-align: center
-      a
-        @include meta
+        text-align: left
+        a
+          @include meta
+
       a
         color: $colour1
-        text-transform: uppercase
+        //text-transform: uppercase
         font-style: italic
         @include hover
 
