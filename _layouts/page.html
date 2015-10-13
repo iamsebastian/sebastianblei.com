@@ -45,9 +45,10 @@ layout: default
 {% endif %}
 </div>
 {% unless page.sidebar == false %}
-<aside class="sidebar">
-  {% if site.page_asides.size %}
-  {% else %}
-  {% endif %}
-</aside>
+
+{% if site.page_asides.size %}
+    <aside class="sidebar">
+    </aside>
+{% endif %}
+
 {% endunless %}
