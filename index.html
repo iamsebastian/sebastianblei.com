@@ -18,9 +18,9 @@ layout: default
       <span class="inactive">Keine vorherigen Beiträge</span>
     {% endif %}
 
-    <span class="floralia">T</span>
+    <span class="prev_next_arrows">&lt;</span>
     <span class="page_number ">{{ paginator.page }} von {{ paginator.total_pages }}</span>
-      <span class="floralia">U</span>
+    <span class="prev_next_arrows">&gt;</span>
 
     {% if paginator.next_page %}
       <a href="{{ paginator.next_page_path }}" class="light next">Die nächsten Beiträge</a>
@@ -34,9 +34,9 @@ layout: default
   </div>
 
 </div>
-<aside class="sidebar">
-  {% if site.blog_index_asides.size %}
-  {% else %}
-  {% endif %}
-  <div class="clear"></div>
-</aside>
+
+{% if site.page_asides.size %}
+    <aside class="sidebar">
+    </aside>
+    <div class="clear"></div>
+{% endif %}
