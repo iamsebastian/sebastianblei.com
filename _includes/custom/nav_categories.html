@@ -1,0 +1,10 @@
+<h3 class="headline">Kategorien</h3>
+<ul class="sub-navigation">
+    {% assign _cats = site.categories | sort %}
+    {% for cat in _cats %}
+        {% assign _cat = cat[0] %}
+        <li>
+            <a href="{{ url }}/{{site.category_dir}}/{{_cat}}/">{{_cat}}</a>
+        </li>
+    {% endfor %}
+</ul>
