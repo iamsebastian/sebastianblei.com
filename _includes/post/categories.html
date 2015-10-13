@@ -1,6 +1,6 @@
 {% capture category %}{% if post %}{{ post.categories | category_links | size }}{% else %}{{ page.categories | category_links | size }}{% endif %}{% endcapture %}
 {% unless category == '0' %}
-<p>
+
   <span class="categories">
     {% if post %}
       in
@@ -15,7 +15,10 @@
               {% if forloop.last %}
                 {% comment %}]{% endcomment %}
               {% else%}
-                {% include custom/svg/ornamente_dreieck_plain.svg %}
+                ,
+                {% comment %}
+                  {% include custom/svg/ornamente_dreieck_plain.svg %}
+                {% endcomment %}
               {% endif %}
             </span>
 
@@ -36,7 +39,10 @@
               {% if forloop.last %}
                 {% comment %}]{% endcomment %}
               {% else%}
-                {% include custom/svg/ornamente_dreieck_plain.svg %}
+                ,
+                {% comment %}
+                  {% include custom/svg/ornamente_dreieck_plain.svg %}
+                {% endcomment %}
               {% endif %}
             </span>
 
@@ -46,5 +52,5 @@
       {% comment %}{{ page.categories | category_links }}{% endcomment %}
     {% endif %}
   </span>
-</p>
+
 {% endunless %}

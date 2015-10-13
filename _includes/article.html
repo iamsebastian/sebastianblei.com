@@ -2,14 +2,7 @@
   <header>
 
     {% if index %}
-      <p class="header-ornament">
-        {% include custom/svg/ornamente_grosser_schwung_plain.svg %}
-      </p>
       <p class="meta">
-        {% comment %}
-          {% include custom/svg/hline.svg %}
-          {% include custom/svg/hline_m.svg %}
-        {% endcomment %}
 
         {% if site.disqus_short_name and page.comments != false and post.comments != false and site.disqus_show_comment_count == true %}
 
@@ -32,7 +25,6 @@
 
         {% if post.date %}
           <p class="preview-date">
-            {{ 'december' | localize }}
             {% include post/date.html %}
             {% comment %}
                 {{ post.date | localize: "%e. %B %Y" }}
@@ -80,8 +72,11 @@
     {% if post.categories %}
       <div class="categories-list">
 
+        <span class="categories-main-pre-text">Behandelt:</span>
         <span class="category-pre-item">
+            {% comment %}
             {% include custom/svg/ornamente_linie_plain.svg %}
+            {% endcomment %}
         </span>
 
         {% for category in post.categories %}
@@ -95,7 +90,10 @@
               {% if forloop.last %}
                 {% comment %}]{% endcomment %}
               {% else%}
+                ,
+                {% comment %}
                 {% include custom/svg/ornamente_dreieck_plain.svg %}
+                {% endcomment %}
               {% endif %}
             </span>
 

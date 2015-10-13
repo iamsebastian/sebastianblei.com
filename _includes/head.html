@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+
+<!--#if expr="$HTTP_COOKIE=/webfont-loaded=true/" -->
+<html lang="en" class="webfont-loaded">
+<!--#else -->
+<html lang="en">
+<!--#endif -->
+
 <head>
 
   <meta charset="utf-8">
@@ -26,6 +30,9 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link rel="prefetch" href="fonts/firasans-medium-webfont.woff">
+  <link rel="prefetch" href="fonts/sourceserifpro-regular-webfont.woff">
+
   <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
   <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
@@ -42,11 +49,23 @@
   <meta name="msapplication-TileColor" content="#2b5797">
   <meta name="msapplication-TileImage" content="/mstile-144x144.png">
 
-  {% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' | strip_slash }}{% endif %}{% endcapture %}
+  {% capture canonical %}
+      {{ site.url }}
+      {% if site.permalink contains '.html' %}
+          {{ page.url }}
+      {% else %}
+          {{ page.url | remove:'index.html' | strip_slash }}
+      {% endif %}
+  {% endcapture %}
+
   <link rel="canonical" href="{{ canonical }}">
+
   <link href="{{ root_url }}/favicon.png" rel="icon">
   <link href="{% if root_url.length < 1 %}{{ root_url + ''}}{% endif %}/css/main.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="{% if root_url.length < 1 %}{{ root_url + ''}}{% endif %}/fonts/gandhi_serif.css" media="screen, projection" rel="stylesheet" type="text/css">
+  {% comment %}
+  <link href="{% if root_url.length < 1 %}{{ root_url + ''}}{% endif %}/fonts/firasansmedium.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href="{% if root_url.length < 1 %}{{ root_url + ''}}{% endif %}/fonts/gandhi_serif.css" media="screen, projection" rel="stylesheet" type="text/css">
+  {% endcomment %}
   <link href="{{ site.subscribe_rss }}" rel="alternate" title="{{site.title}}" type="application/atom+xml">
 
 </head>

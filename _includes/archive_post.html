@@ -1,29 +1,29 @@
 {% capture category %}
-	{{ post.categories | size }}
+    {{ post.categories | size }}
 {% endcapture %}
 
 <time datetime="{{ post.date | datetime | date_to_xmlschema }}" pubdate>{{ post.date | date: "<span class='day'>%d</span> <span class='month'>%b</span> <span class='year'>%Y</span>"}}</time>
 
 <h1>
-	<a href="{{ root_url }}{{ post.url }}">
-		{{post.title}}
-	</a>
+    <a href="{{ root_url }}{{ post.url }}">
+        {{post.title}}
+    </a>
 </h1>
 
 {% comment %}{% if category != '0' %}
-	<span class="categories">
-		in 
+    <span class="categories">
+    in
 
-         {% for cat in post.categories %}
-			<a href="{{ root_url | remove:category }}{{ cat }}">
-				{{ cat }}
-				{{ cat | category_links }}
-			</a>
+    {% for cat in post.categories %}
+        <a href="{{ root_url | remove:category }}{{ cat }}">
+        {{ cat }}
+        {{ cat | category_links }}
+    </a>
 
-        {% endfor %}
+{% endfor %}
 
-	</span>
+</span>
 {% endif %}
 {% endcomment %}
 
-<div class="clear"></div>
+<div class="clear-right"></div>
