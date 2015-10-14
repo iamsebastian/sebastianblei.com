@@ -1,13 +1,13 @@
 <p>
-	{% comment %}
-	No copyright &copy; {{ site.time | date: "%Y" }} - {{ site.author }} - 
-	{% endcomment %}
-	
-	{% if page.author || site.author %}
-		{{ page.author || site.author }}
-	{% endif %}
+{% comment %}
+No copyright &copy; {{ site.time | date: "%Y" }} - {{ site.author }} - 
+{% endcomment %}
 
-	{{ site.time | date: "%Y" }}.
+{% if page.author || site.author %}
+    {{ page.author || site.author }}
+{% endif %}
+
+{{ site.time | date: "%Y" }}.
 
 </br>MIT License.</br>
 
