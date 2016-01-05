@@ -38,7 +38,7 @@ email: mail@sebastianblei.com
 # If publishing to a subdirectory as in http://site.com/project set 'root: /project'
 root: /
 permalink: /blog/:year/:month/:day/:title/
-plugins: plugins
+plugins: _plugins
 code_dir: downloads/code
 
 category_dir: blog/categories
